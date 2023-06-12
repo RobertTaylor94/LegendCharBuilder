@@ -3,34 +3,30 @@ import Link from "next/link";
 import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
 export default function NavBar() {
     return(
-        <NavigationMenu>
+        <NavigationMenu className="justify-start bg-orange-950 text-white">
             <NavigationMenuList>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="p-5 text-2xl">
                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink>
-                            Home
+                            Legend
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="p-5">
                     <Link href="/characters" legacyBehavior passHref>
                         <NavigationMenuLink>
                             Characters
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="p-5">
                     <Link href="/homebrew" legacyBehavior passHref>
                         <NavigationMenuLink>
                             Homebrew Document
