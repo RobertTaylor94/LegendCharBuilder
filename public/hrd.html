@@ -8,9 +8,6 @@
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-
-
-
 <title>Homebrew Compilation</title>
 
 <script>/*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
@@ -50,6 +47,7 @@ h3 {font-size: 24px;}
 h4 {font-size: 18px;}
 h5 {font-size: 16px;}
 h6 {font-size: 12px;}
+body {background-color: #F8E094}
 code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
 pre:not([class]) { background-color: white }</style>
 <script>/*! jQuery UI - v1.11.4 - 2016-01-05
@@ -126,6 +124,8 @@ float: none;
 <script>/* jquery Tocify - v1.9.1 - 2013-10-22
  * http://www.gregfranko.com/jquery.tocify.js/
  * Copyright (c) 2013 Greg Franko; Licensed MIT */
+
+
 
 // Immediately-Invoked Function Expression (IIFE) [Ben Alman Blog Post](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) that calls another IIFE that contains all of the plugin logic.  I used this pattern so that anyone viewing this code would not have to scroll to the bottom of the page to view the local parameters that were passed to the main IIFE.
 (function(tocify) {
@@ -1296,6 +1296,25 @@ color: #d14;
     }
 });
 </script>
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+  if (document.body.scrollTop > 50) {
+    document.getElementById("myButton").style.display = "block";
+  } else {
+    document.getElementById("myButton").style.display = "none";
+  }
+};
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
 <style type="text/css">
 .lightable-minimal {
 border-collapse: separate;
@@ -1620,7 +1639,8 @@ display: none;
 
 <style type="text/css">
 #TOC {
-margin: 25px 0px 20px 0px;
+  background-color: #F8E094;
+  margin: 25px 0px 20px 0px;
 }
 @media (max-width: 768px) {
 #TOC {
@@ -1664,8 +1684,32 @@ line-height: 20px;
 font-size: 0.90em;
 }
 .tocify .list-group-item {
-border-radius: 0px;
+  background-color: #ab9243;
+  border-radius: 0px;
 }
+
+#myBtn {
+  display: block; /* Shown by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 50px; /* Place the button at the bottom of the page */
+  right: 8px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #ab9243; /* Set a background color */
+  color: white; /* Text color */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+@media screen and (min-width: 786px) {
+  #myBtn {
+    display: none;
+  }
+}
+
+
 </style>
 
 
@@ -1673,6 +1717,8 @@ border-radius: 0px;
 </head>
 
 <body>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
 <div class="container-fluid main-container">
