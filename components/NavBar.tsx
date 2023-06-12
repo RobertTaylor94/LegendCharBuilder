@@ -2,15 +2,15 @@ import * as React from "react"
 import Link from "next/link";
 import { cn } from "@/lib/utils"
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 
 export default function NavBar() {
-    return(
-        <NavigationMenu className="justify-start bg-orange-950 text-white">
+    return (
+        <NavigationMenu className="justify-between bg-orange-950 text-white">
             <NavigationMenuList>
                 <NavigationMenuItem className="p-5 text-2xl">
                     <Link href="/" legacyBehavior passHref>
@@ -30,6 +30,15 @@ export default function NavBar() {
                     <Link href="/homebrew" legacyBehavior passHref>
                         <NavigationMenuLink>
                             Homebrew Document
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+            </NavigationMenuList>
+            <NavigationMenuList className="justify-end">
+                <NavigationMenuItem className="p-5 text-end">
+                    <Link href="/user" legacyBehavior passHref>
+                        <NavigationMenuLink>
+                            Sign In
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

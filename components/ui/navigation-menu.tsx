@@ -12,13 +12,13 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "relative z-10 flex flex-1 items-center justify-center",
+      "relative z-10 flex flex-1 items-center justify-center w-full",
       className
     )}
     {...props}
   >
     {children}
-    <NavigationMenuViewport />
+    <NavigationMenuViewport/>
   </NavigationMenuPrimitive.Root>
 ))
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
