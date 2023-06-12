@@ -9,8 +9,7 @@ export default function Home() {
     <div>
       <NavBar></NavBar>
       <div style={{width: '100vw', height: '50vh', overflow: 'hidden', position: "relative"}}>
-        {/* <img src={"./../public/legend_banner.png"} alt="A hero stood on the edge of a mountain" style={{width: '100vw', height: '50vh'}}/> */}
-        <Image src={"/../public/legend_banner.png"} fill={true} alt="The silouette of a hero standing in a cloudy mountain range. "/>
+        <Image src={"/../public/legend_banner.png"} fill={true} alt="The silouette of a hero standing in a cloudy mountain range." style={{objectFit: 'cover', objectPosition: 'top'}}/>
       </div>   
     </div>
   )
