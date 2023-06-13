@@ -1,14 +1,27 @@
-import * as React from "react"
+import * as React from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 export default function NavBar() {
+
+    let loggedIn = false
+    let label = ""
+    let route = ""
+
+    if (loggedIn) {
+        label = "Username"
+        route = "user"
+    } else {
+        label = "Sign In"
+        route = "sign_in"
+    }
+
     return (
         <NavigationMenu className="justify-between bg-orange-950 text-white">
             <NavigationMenuList>
@@ -36,9 +49,9 @@ export default function NavBar() {
             </NavigationMenuList>
             <NavigationMenuList className="justify-end">
                 <NavigationMenuItem className="p-5 text-end">
-                    <Link href="/user" legacyBehavior passHref>
+                    <Link href={`/${route}`} legacyBehavior passHref>
                         <NavigationMenuLink>
-                            Sign In
+                            {label}
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
