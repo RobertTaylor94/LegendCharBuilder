@@ -3,9 +3,18 @@ import { Sheet, SheetTrigger } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { useState } from "react"
 import SignIn from "./auth/SignIn"
+import { auth } from "@/firebase/config"
+import Profile from "./auth/Profile"
 
 export function SheetDemo() {
+
+  let buttonLabel = "Sign Up"
+  if (auth.currentUser != null) {
+    buttonLabel = "Profile"
+  } 
+
   const [currentSub, setCurrentSub] = useState("sub1")
+
   const handleClick = () => {
     setCurrentSub(currentSub === 'sub1' ? 'sub2' : 'sub1')
   }
@@ -13,11 +22,17 @@ export function SheetDemo() {
   return (
     <Sheet>
             <SheetTrigger asChild>
-                <Button variant="outline">Sign Up</Button>
+                <Button variant="outline">{buttonLabel}</Button>
             </SheetTrigger>
             <div>
-              {currentSub === "sub1" && (<SignUp handleClick={handleClick} />)}
-              {currentSub === "sub2" && (<SignIn handleClick={handleClick} />)}
+              {
+                auth.currentUser != null ? (<Profile />) : (
+                  <>
+                  {currentSub === "sub1" && <SignUp handleClick={handleClick}/>}
+                  {currentSub === "sub2" && <SignIn handleClick={handleClick}/>}
+                  </>
+                )
+                }
             </div>
     </Sheet>
   )
