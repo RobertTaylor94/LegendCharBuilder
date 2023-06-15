@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
@@ -7,19 +8,19 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Button } from "./ui/button";
+import { Sheet } from "./ui/sheet";
+import { SheetDemo } from "./sheet";
 
 export default function NavBar() {
 
     let loggedIn = false
     let label = ""
-    let route = ""
 
     if (loggedIn) {
         label = "Username"
-        route = "user"
     } else {
-        label = "Sign In"
-        route = "sign_in"
+        label = "Sign Up"
     }
 
     return (
@@ -49,11 +50,7 @@ export default function NavBar() {
             </NavigationMenuList>
             <NavigationMenuList className="justify-end">
                 <NavigationMenuItem className="p-5 text-end">
-                    <Link href={`/${route}`} legacyBehavior passHref>
-                        <NavigationMenuLink>
-                            {label}
-                        </NavigationMenuLink>
-                    </Link>
+                    <SheetDemo></SheetDemo>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
