@@ -12,16 +12,10 @@ import { Button } from "./ui/button";
 import { Sheet } from "./ui/sheet";
 import { SheetDemo } from "./sheet";
 
+import { auth } from "@/firebase/config";
+import { useAuth } from "../context/state"
+
 export default function NavBar() {
-
-    let loggedIn = false
-    let label = ""
-
-    if (loggedIn) {
-        label = "Username"
-    } else {
-        label = "Sign Up"
-    }
 
     return (
         <NavigationMenu className="justify-between bg-orange-950 text-white">
