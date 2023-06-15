@@ -27,7 +27,6 @@ export default function SignUp(props: { handleClick: any; }) {
     const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         let newInput = { [event.target.name] : event.target.value }
         setData({...data, ...newInput})
-        console.log(data)
     }
     const handleSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
         createUserWithEmailAndPassword(auth, data.email, data.password)
@@ -36,6 +35,7 @@ export default function SignUp(props: { handleClick: any; }) {
             console.log("User created")
         })
         .catch((err) => {
+            console.log(err.code)
             console.log(err.message)
         })
         const clearData = {email: '', password: ''}
