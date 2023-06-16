@@ -6,7 +6,7 @@ import SignIn from "./auth/SignIn"
 import { auth } from "@/firebase/config"
 import Profile from "./auth/Profile"
 
-export function SheetDemo() {
+export function UserSheet() {
 
   let buttonLabel = "Sign Up"
   if (auth.currentUser != null) {
