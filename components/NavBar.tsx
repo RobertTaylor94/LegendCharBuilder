@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
 import { Sheet } from "./ui/sheet";
-import { SheetDemo } from "./sheet";
+import { UserSheet } from "./sheet";
 
 import { auth } from "@/firebase/config";
 import { useAuth } from "../context/state"
@@ -44,7 +44,7 @@ export default function NavBar() {
             </NavigationMenuList>
             <NavigationMenuList className="justify-end">
                 <NavigationMenuItem className="p-5 text-end">
-                    <SheetDemo></SheetDemo>
+                    <UserSheet/>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
