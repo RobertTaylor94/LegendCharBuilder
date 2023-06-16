@@ -14,7 +14,7 @@ import { signOut } from "firebase/auth"
 
 export default function Profile() {
 
-    const signout = () => {
+    const logOut = () => {
         signOut(auth)
         .then(() => {
             console.log("sign out succesfull")
@@ -34,7 +34,7 @@ export default function Profile() {
                 </SheetHeader>
                 <div>
                     {auth.currentUser?.email}
-                    <Button onClick={signOut}> Sign Out</Button>
+                    <Button onClick={logOut}> Sign Out</Button>
                 </div>
                 <SheetFooter>
                     <SheetClose asChild>
