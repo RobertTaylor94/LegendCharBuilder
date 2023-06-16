@@ -54,13 +54,13 @@ export default function SignIn(props: { handleClick: any }) {
                         <Label htmlFor="name" className="text-right">
                             Username
                         </Label>
-                        <Input id="email" placeholder="Email" className="col-span-3" style={{ backgroundColor: 'white', color: 'black' }} onChange={handleInput}/>
+                        <Input id="email" placeholder="Email" name="email" className="col-span-3" style={{ backgroundColor: 'white', color: 'black' }} onChange={handleInput}/>
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="username" className="text-right">
                             Password
                         </Label>
-                        <Input id="password" placeholder="Password" className="col-span-3" style={{ backgroundColor: 'white', color: 'black'}} type="password" onChange={handleInput}/>
+                        <Input id="password" placeholder="Password" name="password" className="col-span-3" style={{ backgroundColor: 'white', color: 'black'}} type="password" onChange={handleInput}/>
                     </div>
                     <Button type='submit' style={{ backgroundColor: '#F8E094', color: '#421407' }} onClick={handleSubmit}>Sign In</Button>
                     <div className="grid grid-cols-4 items-center gap-4">
