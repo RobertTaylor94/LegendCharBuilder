@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
@@ -7,20 +8,14 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Button } from "./ui/button";
+import { Sheet } from "./ui/sheet";
+import { UserSheet } from "./sheet";
+
+import { auth } from "@/firebase/config";
+import { useAuth } from "../context/state"
 
 export default function NavBar() {
-
-    let loggedIn = false
-    let label = ""
-    let route = ""
-
-    if (loggedIn) {
-        label = "Username"
-        route = "user"
-    } else {
-        label = "Sign In"
-        route = "sign_in"
-    }
 
     return (
         <NavigationMenu className="justify-between bg-orange-950 text-white">
@@ -49,11 +44,7 @@ export default function NavBar() {
             </NavigationMenuList>
             <NavigationMenuList className="justify-end">
                 <NavigationMenuItem className="p-5 text-end">
-                    <Link href={`/${route}`} legacyBehavior passHref>
-                        <NavigationMenuLink>
-                            {label}
-                        </NavigationMenuLink>
-                    </Link>
+                    <UserSheet/>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
